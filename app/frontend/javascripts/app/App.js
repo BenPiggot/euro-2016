@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://api.football-data.org/alpha/teams/57/fixtures', { headers: HEADERS })
+    fetch('http://api.football-data.org/v1/soccerseasons/424/fixtures', { headers: HEADERS })
       .then((response) => response.json())
       .then((responseData) => {
         this.setState({ fixtures: responseData})
