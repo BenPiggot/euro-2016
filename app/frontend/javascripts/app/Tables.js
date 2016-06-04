@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import 'babel-polyfill';
 import Team from './Team.js';
 
-class tables extends Component {
+class Tables extends Component {
   render() {
   const groupInfo = _.values(this.props.tables[0]);
 
@@ -168,5 +168,5 @@ class tables extends Component {
   }
 };
 
-export default tables;
+export default Tables;
 
