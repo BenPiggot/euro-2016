@@ -4,7 +4,7 @@ import 'whatwg-fetch';
 import 'babel-polyfill';
 import Team from './Team.js';
 
-class tables extends Component {
+class Tables extends Component {
   render() {
   const groupInfo = _.values(this.props.tables[0]);
 
@@ -18,9 +18,11 @@ class tables extends Component {
              goals={team.goals} 
              goalsAgainst={team.goalsAgainst}
              points={team.points}
-             image={team.crestURI}/>
+             image={team.crestURI}
+             position={team.rank} 
+             key={team.teamId}/>
         }
-      }) : null;
+      }).sort((a,b) => a.props.rank - b.props.rank) : null;
 
   const groupB = teams.length > 0 ?
       teams.map( (team) => {
@@ -29,9 +31,11 @@ class tables extends Component {
              goals={team.goals} 
              goalsAgainst={team.goalsAgainst}
              points={team.points}
-             image={team.crestURI}/>
+             image={team.crestURI}
+             position={team.rank} 
+             key={team.teamId}/>
         }
-      }) : null;
+      }).sort((a,b) => a.props.rank - b.props.rank) : null;
 
   const groupC =  teams.length > 0 ?
       teams.map( (team) => {
@@ -40,9 +44,12 @@ class tables extends Component {
              goals={team.goals} 
              goalsAgainst={team.goalsAgainst}
              points={team.points}
-             image={team.crestURI}/>
+             image={team.crestURI}
+             position={team.rank} 
+             key={team.teamId}/>
         }
-      }) : null;
+      }).sort((a,b) => a.props.rank - b.props.rank) : null;
+
   
   const groupD = teams.length > 0 ?
       teams.map( (team) => {
@@ -51,9 +58,11 @@ class tables extends Component {
              goals={team.goals} 
              goalsAgainst={team.goalsAgainst}
              points={team.points}
-             image={team.crestURI}/>
+             image={team.crestURI}
+             position={team.rank} 
+             key={team.teamId}/>
         }
-      }) : null;
+      }).sort((a,b) => a.props.rank - b.props.rank) : null;
 
   const groupE = teams.length > 0 ?
       teams.map( (team) => {
@@ -62,9 +71,11 @@ class tables extends Component {
              goals={team.goals} 
              goalsAgainst={team.goalsAgainst}
              points={team.points}
-             image={team.crestURI}/>
+             image={team.crestURI}
+             position={team.rank} 
+             key={team.teamId}/>
         }
-      }) : null;
+      }).sort((a,b) => a.props.rank - b.props.rank) : null;
 
   const groupF = teams.length > 0 ?
       teams.map( (team) => {
@@ -73,100 +84,118 @@ class tables extends Component {
              goals={team.goals} 
              goalsAgainst={team.goalsAgainst}
              points={team.points}
-             image={team.crestURI}/>
+             image={team.crestURI}
+             position={team.rank} 
+             key={team.teamId}/>
         }
-      }) : null;
+      }).sort((a,b) => a.props.rank - b.props.rank) : null;
 
   return <div className='container'>
-    <h1>Euro 2016</h1>
+    <div style={{backgroundColor: '#3986B3'}}>
+      <h1 style={{color: 'white', textAlign: 'center', fontSize: '5rem', fontWeight: 200, marginBottom: '2rem'}}>
+        Euro 2016
+      </h1>
+    </div>
 
      <h3>Group A</h3>
      <table className='table'>
-     <thead>
-        <tr>
-          <th></th>
-          <th>Country</th>
-          <th>Points</th>
-          <th>Goals For</th>
-          <th>Goals Against</th>
-        </tr>
-      </thead>
-      { groupA }
+       <thead className='thead-default'>
+          <tr>
+            <th></th>
+            <th>Country</th>
+            <th>Points</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+          </tr>
+        </thead>
+        <tbody>
+        { groupA }
+        </tbody>
       </table>
 
      <h3>Group B</h3>
      <table className='table'>
-     <thead>
-        <tr>
-          <th></th>
-          <th>Country</th>
-          <th>Points</th>
-          <th>Goals For</th>
-          <th>Goals Against</th>
-        </tr>
-      </thead>
-      { groupB }
+       <thead className='thead-default'>
+          <tr>
+            <th></th>
+            <th>Country</th>
+            <th>Points</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+          </tr>
+        </thead>
+        <tbody>
+        { groupB }
+        </tbody>
       </table>
 
      <h3>Group C</h3>
      <table className='table'>
-     <thead>
-        <tr>
-          <th></th>
-          <th>Country</th>
-          <th>Points</th>
-          <th>Goals For</th>
-          <th>Goals Against</th>
-        </tr>
-      </thead>
-      { groupC }
+       <thead className='thead-default'>
+          <tr>
+            <th></th>
+            <th>Country</th>
+            <th>Points</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+          </tr>
+        </thead>
+        <tbody>
+        { groupC }
+        </tbody>
       </table>
 
       <h3>Group D</h3>
       <table className='table'>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Country</th>
-          <th>Points</th>
-          <th>Goals For</th>
-          <th>Goals Against</th>
-        </tr>
-      </thead>
-      { groupD }
+        <thead className='thead-default'>
+          <tr>
+            <th></th>
+            <th>Country</th>
+            <th>Points</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+          </tr>
+        </thead>
+        <tbody>
+        { groupD }
+        </tbody>
       </table>
 
       <h3>Group E</h3>
       <table className='table'>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Country</th>
-          <th>Points</th>
-          <th>Goals For</th>
-          <th>Goals Against</th>
-        </tr>
-      </thead>
-      { groupE }
+        <thead className='thead-default'>
+          <tr>
+            <th></th>
+            <th>Country</th>
+            <th>Points</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+          </tr>
+        </thead>
+        <tbody>
+        { groupE }
+        </tbody>
       </table>
 
       <h3>Group F</h3>
       <table className='table'>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Country</th>
-          <th>Points</th>
-          <th>Goals For</th>
-          <th>Goals Against</th>
-        </tr>
-      </thead>
-      { groupF }
+        <thead className='thead-default'>
+          <tr>
+            <th></th>
+            <th>Country</th>
+            <th>Points</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+          </tr>
+        </thead>
+        <tbody>
+        { groupF }
+        </tbody>
       </table>
 
     </div>
   }
 };
 
-export default tables;
+export default Tables;
 
