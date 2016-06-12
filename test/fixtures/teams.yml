@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  goals_for: 1
+  goals_against: 1
+  badge_url: MyString
+
+two:
+  name: MyString
+  goals_for: 1
+  goals_against: 1
+  badge_url: MyString
