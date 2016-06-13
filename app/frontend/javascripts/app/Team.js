@@ -5,8 +5,7 @@ class Team extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      showInfo: false,
-      countryImage: ''
+      showInfo: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
