@@ -36,6 +36,9 @@ var config = {
     colors: true,
     historyApiFallback: true,
     inline: true
+  },
+  node: {
+    fs: "empty"
   }
 }
 

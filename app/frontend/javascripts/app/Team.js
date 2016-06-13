@@ -5,16 +5,24 @@ class Team extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      showInfo: false
+      showInfo: false,
+      countryImage: ''
     }
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+
   }
 
   handleClick(event) {
     event.preventDefault()
     this.setState({ showInfo: !this.state.showInfo })
-    $('body').on('click', () => {
-      this.setState({ showInfo: !this.state.showInfo })
+    $('body').on('click', (event) => {
+      if (!$(event.target).closest('.TeamInfo').length > 0) {
+        this.setState({ showInfo: !this.state.showInfo })
+        $('body').unbind('click');
+      }
     })
   }
 
