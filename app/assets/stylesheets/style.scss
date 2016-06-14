@@ -1,3 +1,11 @@
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+h1 {
+  font-family: 'Passion One', cursive;
+}
+
 a {
   text-decoration: none;
   color: #111;
@@ -6,6 +14,10 @@ a {
 a:hover {
   text-decoration: none;
   cursor: pointer;
+}
+
+.container {
+  border: 1px solid #ddd;
 }
 
 .TeamInfo {
@@ -24,4 +36,9 @@ a:hover {
 .TeamInfo__TeamName {
   text-align: center;
   margin-top: 0.5rem;
+}
+
+.CountryImage {
+  margin-left: 15%;
+  width: 70%;
 }

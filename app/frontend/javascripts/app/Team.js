@@ -5,13 +5,23 @@ class Team extends Component {
   constructor() {
     super(...arguments)
     this.state = {
-      showInfo: false
+      showInfo: false,
+      countryImage: ''
     }
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
+    fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4b1ce80af46485e18c007222f6f725b&tags=${this.props.teamName}&has_geo=1&is_getty=true&per_page=3&format=json&nojsoncallback=?`)
+    .then((response) => response.json())
+    .then((responseData) => {
+      const photos = responseData.photos.photo.map( (p) => {
+        return `https://farm3.static.flickr.com/${p.server}/${p.id}_${p.secret}_n.jpg`
+      })
 
+      const imageString = _.sample(photos)
+      this.setState({ countryImage: imageString });
+    })
   }
 
   handleClick(event) {
@@ -27,8 +37,10 @@ class Team extends Component {
 
   render() {
     const props = {
-      name: this.props.teamName
+      name: this.props.teamName,
+      countryImage: this.state.countryImage
     }
+
     return <tr>
       <td><img style={{height: '20px', width: '30px'}} src={this.props.image}/></td>
       <td onClick={this.handleClick}>
